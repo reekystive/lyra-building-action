@@ -11,7 +11,7 @@ FROM amd64/ubuntu:latest
 # Install tools
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
-    apt-get upgrade && \
+    apt-get upgrade -y && \
     apt-get install -y wget unzip && \
     apt-get install -y openjdk-11-jdk && \
     # Change default tzdata config
