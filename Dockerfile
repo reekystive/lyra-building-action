@@ -31,7 +31,7 @@ RUN wget -O commandlinetools.zip https://dl.google.com/android/repository/comman
 WORKDIR /root/android/sdk/cmdline-tools/latest/bin
 RUN yes | ./sdkmanager --install "platforms;android-30" "build-tools;30.0.3" "ndk;21.4.7075529" && \
     echo "export ANDROID_HOME=/root/android/sdk" >> $HOME/.bashrc && \
-    echo "export ANDROID_NDK_HOME/root/android/sdk/ndk/21.4.7075529" >> $HOME/.bashrc && \
+    echo "export ANDROID_NDK_HOME=/root/android/sdk/ndk/21.4.7075529" >> $HOME/.bashrc && \
     echo "export PATH=$PATH:/root/android/sdk/cmdline-tools/latest/bin" >> $HOME/.bashrc
 
 # Install Bazel
