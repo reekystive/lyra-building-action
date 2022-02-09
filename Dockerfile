@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y wget unzip && \
-    apt-get install -y openjdk-11-jdk && \
+    apt-get install -y openjdk-11-jdk python3.8 && \
     # Change default tzdata config
     echo "Asia/Shanghai" > /etc/timezone && \
     dpkg-reconfigure -f noninteractive tzdata
