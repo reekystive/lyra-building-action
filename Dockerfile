@@ -45,3 +45,12 @@ RUN apt-get install -y apt-transport-https curl gnupg && \
 
 # Install tools
 RUN apt-get install -y git vim
+
+# Clone repo and build lyra
+RUN git clone https://github.com/reekystive/lyra.git && \
+    cd lyra && \
+    bazel build -c opt :encoder_main && \
+    bazel build -c opt :decoder_main && \
+    bazel build -c opt :encoder_main --config=android_arm64 && \
+    bazel build -c opt :decoder_main --config=android_arm64 && \
+    bazel build android_example:lyra_android_example --config=android_arm64 --copt=-DBENCHMARK
