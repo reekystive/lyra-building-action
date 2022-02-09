@@ -47,12 +47,12 @@ RUN apt-get install -y apt-transport-https curl gnupg && \
 RUN apt-get install -y git vim
 
 # Clone repo and build lyra
-ENV ANDROID_HOME=/root/android/sdk
-ENV ANDROID_NDK_HOME=/root/android/sdk/ndk/21.4.7075529
-RUN git clone https://github.com/reekystive/lyra.git && \
-    cd lyra && \
-    bazel build -c opt :encoder_main && \
-    bazel build -c opt :decoder_main && \
-    bazel build -c opt :encoder_main --config=android_arm64 && \
-    bazel build -c opt :decoder_main --config=android_arm64 && \
-    bazel build android_example:lyra_android_example --config=android_arm64 --copt=-DBENCHMARK
+# ENV ANDROID_HOME=/root/android/sdk
+# ENV ANDROID_NDK_HOME=/root/android/sdk/ndk/21.4.7075529
+# RUN git clone https://github.com/reekystive/lyra.git && \
+#     cd lyra && \
+#     bazel build -c opt :encoder_main && \
+#     bazel build -c opt :decoder_main && \
+#     bazel build -c opt :encoder_main --config=android_arm64 && \
+#     bazel build -c opt :decoder_main --config=android_arm64 && \
+#     bazel build android_example:lyra_android_example --config=android_arm64 --copt=-DBENCHMARK
